@@ -19,6 +19,11 @@ class Router
     $this->routeMap['get'][$url] = $callback;
   }
 
+  public function post(string $url, $callback)
+  {
+    $this->routeMap['post'][$url] = $callback;
+  }
+
   public function resolve()
   {
     $method = $this->request->getMethod();
@@ -36,7 +41,7 @@ class Router
       Application::$app->controller = $controller;
       $callback[0] = $controller;
     }
-    return call_user_func($callback);
+        return call_user_func($callback, $this->request);
   }
 
   public function renderView($view, $params = [])
@@ -44,13 +49,17 @@ class Router
     $layoutName = Application::$app->controller->layout;
     $viewContent = $this->renderViewOnly($view, $params);
     ob_start();
-    include_once Application::$ROOT_DIR."/views/layouts/$layoutName.php";
+    include_once Application::$ROOT_DIR . "/views/layouts/$layoutName.php";
     $layoutContent = ob_get_clean();
     return str_replace('{{content}}', $viewContent, $layoutContent);
   }
 
   public function renderViewOnly($view, $params = [])
   {
+    foreach ($params as $key => $value) {
+      $$key = $value;
+    }
+
     ob_start();
     include_once Application::$ROOT_DIR . "/views/$view.php";
     return ob_get_clean();
