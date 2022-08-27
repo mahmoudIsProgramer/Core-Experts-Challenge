@@ -11,9 +11,4 @@ class SiteController extends Controller
   {
     return $this->render('home');
   }
-
-  public function contact()
-  {
-    return $this->render('contact');
-  }
 }
