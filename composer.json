@@ -1,0 +1,17 @@
+{
+  "name": "mahmoud/dief",
+  "description": "native php mvc framwork",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Mahmoud Ahmed",
+      "email": "mahmouddief0@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": "."
+    }
+  },
+  "require": {}
+}
