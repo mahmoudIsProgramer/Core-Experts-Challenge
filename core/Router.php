@@ -5,11 +5,13 @@ namespace app\core;
 class Router
 {
   private Request $request;
+  private Response $response;
   private array $routeMap = [];
 
-  public function __construct(Request $request)
+  public function __construct(Request $request, Response $response)
   {
     $this->request = $request;
+    $this->response = $response;
   }
 
   public function get(string $url, $callback)
@@ -23,6 +25,7 @@ class Router
     $url = $this->request->getUrl();
     $callback = $this->routeMap[$method][$url] ?? false;
     if (!$callback) {
+      $this->response->statusCode(404);
       return 'Not Found';
     }
     if (is_string($callback)) {
