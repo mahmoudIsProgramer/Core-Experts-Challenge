@@ -24,6 +24,7 @@ class Repository
 
   public static function formateRepos($data)
   {
+
     $repos = [];
     foreach ($data['items'] as $key => $value) {
       $repos[] = [
@@ -33,6 +34,9 @@ class Repository
         'created_at' => $value['created_at'],
       ];
     }
-    return $repos;
+    return [
+      "total_count" => $data['total_count'],
+      "repos" => $repos,
+    ];
   }
 }
