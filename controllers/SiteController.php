@@ -4,6 +4,7 @@ namespace app\controllers;
 
 
 use app\core\Controller;
+use app\models\Repository;
 
 class SiteController extends Controller
 {
@@ -12,7 +13,11 @@ class SiteController extends Controller
     return $this->render('home', [
       'name' => 'Mahmoud Ahmed'
     ]);
+  }
 
-    return $this->render('home');
+  public function getRepositories()
+  {
+
+    var_dump(Repository::getRepos()); 
   }
 }
