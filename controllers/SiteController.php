@@ -17,7 +17,8 @@ class SiteController extends Controller
 
   public function getRepositories()
   {
-
-    var_dump(Repository::getRepos()); 
+    $response['status_code_header'] = 'HTTP/1.1 200 OK';
+    $response['body'] = json_encode(Repository::getRepos(),true);
+    return json_encode(Repository::getRepos(),true);
   }
 }
