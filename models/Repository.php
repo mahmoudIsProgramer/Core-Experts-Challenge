@@ -12,10 +12,13 @@ class Repository
   public static function getRepos($request)
   {
     $request_data = $request->getBody();
+    $date = date('Y-m-d', strtotime($request_data['start_date']));
+    $per_page = $request_data['per_page'] ?? 10;
+    $page = $request_data['page'] ?? 1;
+    $url = "https://api.github.com/search/repositories?q=created:%3E$date&sort=stars&order=desc&per_page=$per_page&page=$page";
+    
     $client = new GuzzleHttp\Client();
-
-    $url = "https://api.github.com/search/repositories?q=created:%3E".$request_data['start_date']."&sort=stars&order=desc&per_page=".$request_data['per_page']."&page=2"; 
-    $res = $client->request('GET',$url);
+    $res = $client->request('GET', $url);
 
     $statusCode = $res->getStatusCode();
     if ($statusCode >= 200 && $statusCode < 300) {

@@ -5,9 +5,9 @@
     <div class="row">
       <div class="col">
         <div class="input-group mb-3">
-          <label for="start">per page:</label>
-          <select class="form-select" name="per_page" id="per_page" aria-label="Default select example">
-            <option value="" selected>Open this select menu</option>
+          <label for="start">per page:</label></br>
+          <select  name="per_page" id="per_page" class="form-control">
+            <!-- <option value="" selected>Open this select menu</option> -->
             <option value="10">10</option>
             <option value="50">50</option>
             <option value="100">100</option>
@@ -17,7 +17,7 @@
       <div class="col">
         <div class="input-group mb-3">
           <label for="start">Start date:</label>
-          <input type="date" name="start_date"  id="start_date"  >
+          <input type="date" name="start_date" value="2022-01-02"   id="start_date"  >
         </div>
       </div>
       <div class="col">
@@ -41,4 +41,9 @@
     <tbody id="repos-table">
     </tbody>
   </table>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-success" id = "loadMoreRepos" >Load More</button>
+    </div>
+  </div>
 </div>

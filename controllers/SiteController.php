@@ -11,9 +11,7 @@ class SiteController extends Controller
 {
   public function home()
   {
-    return $this->render('home', [
-      'name' => 'Mahmoud Ahmed'
-    ]);
+    return $this->render('home');
   }
 
   public function getRepositories(Request $request)
