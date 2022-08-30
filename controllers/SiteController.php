@@ -4,6 +4,7 @@ namespace app\controllers;
 
 
 use app\core\Controller;
+use app\core\Request;
 use app\models\Repository;
 
 class SiteController extends Controller
@@ -15,10 +16,8 @@ class SiteController extends Controller
     ]);
   }
 
-  public function getRepositories()
+  public function getRepositories(Request $request)
   {
-    $response['status_code_header'] = 'HTTP/1.1 200 OK';
-    $response['body'] = json_encode(Repository::getRepos(),true);
-    return json_encode(Repository::getRepos(),true);
+    return json_encode(Repository::getRepos($request),true);
   }
 }
