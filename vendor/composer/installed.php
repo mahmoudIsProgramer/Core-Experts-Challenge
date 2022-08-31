@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '7e87cdc1f619a06e4e567687ca41bd6c0d79c253',
+    'reference' => '716189ff552fc91993d2d76a4c0ee7e2c1553bcb',
     'name' => 'mahmoud/dief',
   ),
   'versions' => 
@@ -54,7 +54,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '7e87cdc1f619a06e4e567687ca41bd6c0d79c253',
+      'reference' => '716189ff552fc91993d2d76a4c0ee7e2c1553bcb',
     ),
     'myclabs/deep-copy' => 
     array (
