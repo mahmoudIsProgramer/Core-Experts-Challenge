@@ -16,6 +16,6 @@ class SiteController extends Controller
 
   public function getRepositories(Request $request)
   {
-    return json_encode(Repository::getRepos($request),true);
+    return json_encode(Repository::getRepos($request->getBody()),true);
   }
 }

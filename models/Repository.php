@@ -2,16 +2,14 @@
 
 namespace app\models;
 
-use app\core\Request;
 use GuzzleHttp;
 
 class Repository
 {
   public string $repoName;
 
-  public static function getRepos($request)
+  public static function getRepos($request_data)
   {
-    $request_data = $request->getBody();
     $date = date('Y-m-d', strtotime($request_data['start_date']));
     $per_page = $request_data['per_page'] ?? 10;
     $page = $request_data['page'] ?? 1;
