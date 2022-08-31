@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <h1>get Repositories</h1>
+  <h1>Get Repositories</h1>
   <form method="get" id="form-repos">
 
     <div class="row">
@@ -17,7 +17,7 @@
       <div class="col">
         <div class="input-group mb-3">
           <label for="start">Start date:</label>
-          <input type="date" name="start_date" value="2022-01-02"   id="start_date"  >
+          <input type="date" name="start_date" id="start_date"  >
         </div>
       </div>
       <div class="col">
